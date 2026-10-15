@@ -16,7 +16,7 @@ class Product(db.Model):
     stock = db.Column(db.Integer, default=0)
 
     def __repr__(self):
-        return f"Product: {self.name} | Precio: ${self.price} | Stock: {self.stock}"
+        return f"Product: {self.name}  Precio: {self.price}  Stock: {self.stock}"
 
 def init_db():
     with app.app_context():
@@ -63,7 +63,7 @@ def update_product():
         print("--- Actualizando un producto ---")
         product = Product.query.filter_by(id=2).first()
         if product:
-            product.price = 29.99
+            product.price = 12.00
             product.stock = 20
             db.session.commit()
             print("Producto actualizado con éxito:", product)
